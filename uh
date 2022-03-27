@@ -1,0 +1,24 @@
+step by step mining verus coin di stb hg680p 
+1. install armbian di stb hg680p
+2. buka terminal emulator
+3. masuk root mode ketik sudo su
+4. ketik apt update
+5. ketik apt upgrade
+6. masukan perintah mining dibawah ini :
+apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
+apt-get install git
+git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git
+    cd ccminer
+
+    chmod +x build.sh
+
+    chmod +x configure.sh
+
+    chmod +x autogen.sh
+
+    ./build.sh
+nano mn.sh
+/home/itotodidak/ccminer/ccminer -a verus -o stratum+tcp://ap.luckpool.net:3956 -u RY6dbEBkkFNKx3v6rsydH3Qmpgtz9PJyav.STBHEBAT -p x -t 4
+crontab -e
+@reboot bash /home/itotodidak/ccminer/mn.sh > /home/itotodidak/ccminer/miner.log 2>&1
+htop
